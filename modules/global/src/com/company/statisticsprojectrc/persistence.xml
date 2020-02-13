@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="Statistics_projectRC" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.statisticsprojectrc.entity.Order</class>
+        <class>com.company.statisticsprojectrc.entity.User</class>
+        <class>com.company.statisticsprojectrc.entity.Consultant</class>
+        <class>com.company.statisticsprojectrc.entity.Importer</class>
+        <class>com.company.statisticsprojectrc.entity.ImportLog</class>
+        <class>com.company.statisticsprojectrc.entity.ImportLogRecord</class>
+        <class>com.company.statisticsprojectrc.entity.ImportScenario</class>
+        <class>com.company.statisticsprojectrc.entity.Customer</class>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fts-config xmlns="http://schemas.haulmont.com/cuba/fts.xsd">
+    <entities>
+        <entity class="com.company.statisticsprojectrc.entity.Importer">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.statisticsprojectrc.entity.ImportLog">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.statisticsprojectrc.entity.ImportLogRecord">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.statisticsprojectrc.entity.ImportScenario">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.statisticsprojectrc.entity.Customer">
+            <include re=".*"/>
+        </entity>
+    </entities>
+</fts-config>

@@ -1,0 +1,1 @@
+alter table STATISTICSPROJECTRC_ORDER alter column DATE_SALE rename to DATE_SALE__U06416 ^

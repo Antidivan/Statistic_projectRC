@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+
+    <screen id="statisticsprojectrc_ORDER.browse"
+            template="com/company/statisticsprojectrc/web/screens/order/order-browse.xml"/>
+    <screen id="statisticsprojectrc_ORDER.edit"
+            template="com/company/statisticsprojectrc/web/screens/order/order-edit.xml"/>
+    <screen id="statisticsprojectrc_ImportScenario.browse"
+            template="com/company/statisticsprojectrc/web/screens/importscenario/import-scenario-browse.xml"/>
+    <screen id="statisticsprojectrc_ImportScenario.edit"
+            template="com/company/statisticsprojectrc/web/screens/importscenario/import-scenario-edit.xml"/>
+    <screen id="statisticsprojectrc_ImportLog.browse"
+            template="com/company/statisticsprojectrc/web/screens/importlog/import-log-browse.xml"/>
+    <screen id="statisticsprojectrc_ImportLog.edit"
+            template="com/company/statisticsprojectrc/web/screens/importlog/import-log-edit.xml"/>
+
+
+</screen-config>

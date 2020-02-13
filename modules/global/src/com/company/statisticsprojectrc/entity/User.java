@@ -1,0 +1,65 @@
+package com.company.statisticsprojectrc.entity;
+
+import com.haulmont.cuba.core.entity.StandardEntity;
+
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import java.util.Date;
+
+@Table(name = "STATISTICSPROJECTRC_USER")
+@Entity(name = "statisticsprojectrc_USER")
+public class User extends StandardEntity {
+    private static final long serialVersionUID = -1270483272467825534L;
+
+    @NotNull
+    @Column(name = "USER", nullable = false)
+    protected Integer user;
+
+    @Email
+    @NotNull
+    @Column(name = "EMAIL_USER", nullable = false)
+    protected String email_user;
+
+    @Past
+    @Temporal(TemporalType.DATE)
+    @Column(name = "BIRTHDAY")
+    protected Date birthday;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "FIRST_MEETING")
+    protected Date first_meeting;
+
+    public Date getFirst_meeting() {
+        return first_meeting;
+    }
+
+    public void setFirst_meeting(Date first_meeting) {
+        this.first_meeting = first_meeting;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getEmail_user() {
+        return email_user;
+    }
+
+    public void setEmail_user(String email_user) {
+        this.email_user = email_user;
+    }
+
+    public Integer getUser() {
+        return user;
+    }
+
+    public void setUser(Integer user) {
+        this.user = user;
+    }
+}

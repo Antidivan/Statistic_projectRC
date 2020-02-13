@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.statisticsprojectrc.web.screens.importlog.ImportLogBrowse"
+        focusComponent="importLogsTable"
+        lookupComponent="importLogsTable"
+        messagesPack="com.company.statisticsprojectrc.web.screens.importlog">
+    <dsContext>
+        <groupDatasource id="importLogsDs"
+                         class="com.company.statisticsprojectrc.entity.ImportLog"
+                         view="_local">
+            <query>
+                <![CDATA[select e from statisticsprojectrc_ImportLog e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="importLogsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="importLogsTable"
+                datasource="importLogsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="importLogsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="NEW_TAB"/>
+                <action id="edit"
+                        openType="NEW_TAB"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="started"/>
+                <column id="finished"/>
+                <column id="entitiesProcessed"/>
+                <column id="comment"/>
+            </columns>
+            <rows datasource="importLogsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="importLogsTable.create"/>
+                <button id="editBtn" action="importLogsTable.edit"/>
+                <button id="removeBtn" action="importLogsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.statisticsprojectrc.web.screens.importlog.ImportLogEdit"
+        datasource="importLogDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.statisticsprojectrc.web.screens.importlog">
+    <dsContext>
+        <datasource id="importLogDs"
+                    class="com.company.statisticsprojectrc.entity.ImportLog"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions" spacing="true">
+        <fieldGroup id="fieldGroup" datasource="importLogDs">
+            <column width="250px">
+                <field property="started"/>
+                <field property="finished"/>
+                <field property="entitiesProcessed"/>
+                <field property="comment" rows="5"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

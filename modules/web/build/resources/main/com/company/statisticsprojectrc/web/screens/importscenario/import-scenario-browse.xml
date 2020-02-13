@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.statisticsprojectrc.web.screens.importscenario.ImportScenarioBrowse"
+        focusComponent="importScenariosTable"
+        lookupComponent="importScenariosTable"
+        messagesPack="com.company.statisticsprojectrc.web.screens.importscenario">
+    <dsContext>
+        <groupDatasource id="importScenariosDs"
+                              class="com.company.statisticsprojectrc.entity.ImportScenario"
+                              view="import-scenario-view">
+            <query>
+                <![CDATA[select e from statisticsprojectrc_ImportScenario e]]>
+            </query>
+            <collectionDatasource id="logDs"
+                                  property="log">
+                <groupDatasource id="recordsDs"
+                                 property="records"/>
+            </collectionDatasource>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <vbox expand="importScenariosTable"
+              height="100%"
+              margin="false,true,false,false"
+              spacing="true">
+            <filter id="filter"
+                    applyTo="importScenariosTable"
+                    datasource="importScenariosDs">
+                <properties include=".*"/>
+            </filter>
+            <groupTable id="importScenariosTable">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="template"
+                            generator="generateTemplateCell"
+                            maxTextLength="20"/>
+                    <column id="comment"
+                            maxTextLength="30"/>
+                    <column id="importerBeanName"/>
+                </columns>
+                <rows datasource="importScenariosDs"/>
+                <rowsCount/>
+                <buttonsPanel id="buttonsPanel"
+                              alwaysVisible="true">
+                    <button id="createBtn"
+                            action="importScenariosTable.create"/>
+                    <button id="editBtn"
+                            action="importScenariosTable.edit"/>
+                    <button id="removeBtn"
+                            action="importScenariosTable.remove"/>
+                    <button id="btnImport"
+                            caption="msg://Import"
+                            icon="icons/wf-design-import.png"
+                            invoke="onBtnImportClick"/>
+                </buttonsPanel>
+            </groupTable>
+        </vbox>
+    </layout>
+</window>
